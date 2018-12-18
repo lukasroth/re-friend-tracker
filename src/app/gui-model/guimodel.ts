@@ -119,6 +119,14 @@ export class GuiModel {
                             "form": "ActivityForm",
                             "width": 2
                         },
+						 {
+                            "id":   "location",
+                            "type": "autocomplete",
+                            "name": "Location",
+                            "url": "/location",
+                            "form": "LocationForm",
+                            "width": 2
+                        },
                         {
                             "type": "deleteButton",
                             "name": "Delete"
@@ -146,6 +154,44 @@ export class GuiModel {
 							 "width": 2,
 							 "required": true
 						},
+						{
+							"type": "deleteButton",
+							"name": "Delete"
+						},
+						{
+							"type": "cancelButton",
+							"name": "Cancel"
+						},
+						{
+							"type": "okButton",
+							"name": "Ok"
+						}
+					]
+				},
+				{
+					 "id": "ActivityForm",
+					 "title": "Activity",
+					 "url": "/activity",
+					 "formFieldList": 
+					 [
+						 {
+                            "id":   "activity",
+                            "type": "autocomplete",
+                            "name": "Activity",
+                            "url": "/activity",
+                            "defaultKey": "activityKey",
+                            "readonly": true,
+                            "form": "AddActivityForm",
+                            "width": 2
+                        },
+						 {
+                            "id":   "location",
+                            "type": "autocomplete",
+                            "name": "Location",
+                            "url": "/location",
+                            "form": "LocationForm",
+                            "width": 2
+                        },
 						{
 							"type": "deleteButton",
 							"name": "Delete"
@@ -187,6 +233,13 @@ export class GuiModel {
 						 "icon": "fa-weixin",
 						 "color": "wisteria",
 						 "page": "groupspage",
+						},
+						{
+						 "type": "button",
+						 "name": "Activity",
+						 "icon": "fa-weixin",
+						 "color": "wisteria",
+						 "page": "activitypage",
 						},
                     ]
                 },
@@ -271,6 +324,34 @@ export class GuiModel {
 							"url": "/group",
 							"form": {
 								"form": "GroupForm"
+							}
+						},
+					 ]
+				},
+				{
+					 "id": "activitypage",
+					 "elementList": 
+					 [
+						 {
+							"type": "backbutton",
+						 },
+						 {
+							 "type": "newButton",
+							 "name": "NewActivity",
+							 "icon": "fa-weixin",
+							 "color": "green",
+							 "form": {
+								"form": "ActivityForm"
+							 }
+						 },
+						 {
+							"type": "list",
+							"icon": "fa-weixin",
+							"color": "wisteria",
+							"search": true,
+							"url": "/activity",
+							"form": {
+								"form": "ActivityForm"
 							}
 						},
 					 ]
